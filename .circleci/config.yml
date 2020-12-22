@@ -13,11 +13,13 @@ jobs:
   test:
     <<: *defaultDocker
     steps:
+      - checkout
       - run: npm i
       - run: npm run test
   analyse:
     <<: *defaultDocker
     steps: 
+      - checkout
       - run: npm audit  
 workflows:
   pipeline:
